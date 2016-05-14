@@ -57,7 +57,7 @@ class HexBug {
   public void dive() {
     prev_command = command_dive.issue();
     try{
-      Sphero.up(500);
+      Sphero.up(100);
     }
       catch(AWTException e){
       println(e);
@@ -84,6 +84,12 @@ class HexBug {
     //}
     prev_command = command_left.issue();
     //Sphero.left(2000);
+    try{
+      Sphero.down(100);
+    }
+      catch(AWTException e){
+      println(e);
+    }
   }
   public void right() {
     //if (fireBetweenMoves & (prev_command != command_right.ID)) {
