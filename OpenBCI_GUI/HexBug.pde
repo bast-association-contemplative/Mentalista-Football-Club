@@ -48,7 +48,7 @@ class HexBug {
     command_right = new Command(serialPort,"|","Right",ID++);
     command_left = new Command(serialPort,"{","Left",ID++);
     command_climb = new Command(serialPort,"}","Climb",ID++);
-    command_dive = new Command(serialPort,"PO","Dive",ID++);
+    command_dive = new Command(serialPort,"P","Dive",ID++);
   }
   
   public void climb() {
@@ -57,7 +57,7 @@ class HexBug {
   public void dive() {
     prev_command = command_dive.issue();
     try{
-      Sphero.up(100);
+      Sphero.forward(100);
     }
       catch(AWTException e){
       println(e);
@@ -71,7 +71,7 @@ class HexBug {
     prev_command = command_forward.issue();
     
     try{
-      Sphero.down(500);
+      Sphero.backward(500);
     }
       catch(AWTException e){
       println(e);
@@ -85,7 +85,7 @@ class HexBug {
     prev_command = command_left.issue();
     //Sphero.left(2000);
     try{
-      Sphero.down(100);
+      Sphero.backward(100);
     }
       catch(AWTException e){
       println(e);

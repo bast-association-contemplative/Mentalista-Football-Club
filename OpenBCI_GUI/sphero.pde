@@ -11,14 +11,14 @@ private Robot robot;
     }
   }
   
-   void down(int delay) throws AWTException {
+   void backward(int delay) throws AWTException {
       robot.keyPress(KeyEvent.VK_DOWN);
       robot.delay(delay);
       robot.keyRelease(KeyEvent.VK_DOWN);
       Stop();
   }
   
-  void up(int delay) throws AWTException {
+  void forward(int delay) throws AWTException {
       robot.keyPress(KeyEvent.VK_UP);
       robot.delay(delay);
       robot.keyRelease(KeyEvent.VK_UP);
